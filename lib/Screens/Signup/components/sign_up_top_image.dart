@@ -1,0 +1,35 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../../constant.dart';
+
+class SignUpScreenTopImage extends StatelessWidget {
+  const SignUpScreenTopImage({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    var size=MediaQuery.of(context).size;
+    return Column(
+      children: [
+        Text(
+          "Sign Up".toUpperCase(),
+          style: const TextStyle(fontWeight: FontWeight.bold),
+        ),
+        const SizedBox(height: defaultPadding),
+        Row(
+          children: [
+            const Spacer(),
+            Expanded(
+              flex: 8,
+              child: SvgPicture.asset("assets/icons/signup.svg",height: size.height/3.6,width:size.width/3.6,),
+            ),
+            const Spacer(),
+          ],
+        ),
+        const SizedBox(height: defaultPadding),
+      ],
+    );
+  }
+}
